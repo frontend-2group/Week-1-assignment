@@ -68,3 +68,4 @@ function maxValue(a) {
 
 const c = maxValue([2, 5, 1, 3, 4]);
 console.log(c);
+// console.log(c);
