@@ -7,7 +7,7 @@ const sortArr = [1,2,3,4,5];
 
 function maxValue(){
     
-    sortArr.reverse();
+    // sortArr.reverse();
     sortArr.sort((a, b) => b - a);
 
 }
@@ -58,10 +58,7 @@ console.log('-------------- 03. --------------');
 
 const numbers = [1,2,3,4,5];
 const newNumbers = [];
-
 const theNum = compareNum(numbers, 11);
-
-
 
 function compareNum(){
     
@@ -74,6 +71,8 @@ function compareNum(){
         console.log('값이 없습니다.');      
     }
 }
+
+console.log(theNum);
 
 
 
@@ -103,14 +102,19 @@ function car(howFar){
     const start = 0;
     const end = howFar;
 
-    function ignition(){
-
-    }
-
     function drive(){
+
+        const ignition = false; 
+        ignition.toggle();        
 
         for(var miles = 0; miles < 40; i++){
             
+            if(ignition === true){
+
+            } else {
+
+            }
+
         }
 
         
