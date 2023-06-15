@@ -33,3 +33,28 @@ function text(name, num){
 }
 
 text("야채곱창", 20);
+
+/*
+function answer(x, y) {
+    let item = ["야채곱창", "바나나우유", "삼각김밥", "도시락", "샌드위치"];
+    let num = [5, 10, 15, 10, 10];
+  
+    let result = "";
+  
+    for (i = 0; i < 5; i++) {
+      if (item[i] == x && num[i] == y) {
+        result = "전산표와 일치합니다.";
+        break;
+      } else if (item[i] == x && num[i] != y) {
+        result = "전산표와 일치하지 않습니다.";
+        break;
+      } else if (item[i] != x) {
+        result = "해당 품목이 없습니다.";
+      }
+    }
+    return console.log(result);
+  }
+  
+  answer("바나나우유", 10);
+
+*/
