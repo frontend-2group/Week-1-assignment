@@ -31,8 +31,8 @@
  */
 
 /* 문제 2번 */
-let giblets = 10;
-let banana = 10;
+let giblets = 5;
+let banana = 4;
 let gimbab = 15;
 let dosirok = 10;
 let sandwich = 10;
@@ -42,7 +42,19 @@ if (giblets === 5) {
 } else {
     giblets = "전산표와 일치하지않습니다";
 }
-
 console.log(giblets);
-//giblets 비교할 대상을 만들지 못함..?ㅠㅠㅠ
-//어렵네여..
+
+if (banana === 10) {
+    banana = "전산표와 일치합니다";
+} else {
+    banana = "전산표와 일치하지않습니다";
+}
+console.log(banana);
+
+// let items = {
+//     giblets: 5,
+//     banana: 10,
+//     gimbab: 15,
+//     dosirok: 10,
+//     sandwich: 10,
+// };
