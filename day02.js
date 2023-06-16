@@ -51,7 +51,7 @@ function answer(x, y) {
   }
   return console.log(result);
 }
-answer("바나나우유", 10);
+answer("바나나우유", 11);
 //-----------------------------------------------
 
 //페어문제풀이
