@@ -96,29 +96,41 @@ function solution(){
 
 // 05. 심화 문제
 console.log('-------------- 05. --------------');
+// 모르겠네요...
 
-function car(howFar){
+function car(ignition){
 
-    const start = 0;
-    const end = howFar;
+    if(ignition = true){
 
-    function drive(){
-
-        const ignition = false; 
-        ignition.toggle();        
-
-        for(var miles = 0; miles < 40; i++){
-            
-            if(ignition === true){
-
-            } else {
-
-            }
-
-        }
-
+        console.log('주행을 시작합니다.');        
         
+        function drive(howFar){     
+            let miles = 0;
+    
+            while(miles++ == howFar){
+
+                const countMiles = setInterval(()=> {
+
+                    console.log(`현재 남은 주행 거리: ${howFar - miles}`);
+                
+                    if (miles++ == howFar){
+
+                        clearInterval(countMiles);
+                        console.log('주행이 완료되었습니다.');
+
+                    } else if(miles++ == 40){
+                        clearInterval(countMiles);
+                        console.log('안전 위험으로 시동을 강제 종료했습니다.');
+                    }
+                
+                }, 500)
+
+            } 
+        }
+        drive(10);
+    
     }
 
-}
-car(40);
+};
+
+car(true);
