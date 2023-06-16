@@ -53,3 +53,28 @@ function answer(x, y) {
 answer("바나나우유", 10); // 바사삭치킨이 나옴
 // 객체로 선언해서 아마 잘 못 읽을 것 같다고 지호님이 말해주셨다
 // 내일 다시 도전.!
+
+console.clear();
+
+function answer(a, b) {
+  let name = ["야채곱창", "바나나우유", "삼각김밥", "도시락", "샌드위치"];
+  let num = [5, 10, 15, 10, 10];
+
+  let result = [];
+  for (i = 0; i < 5; i++) {
+    if (name[i] == a && num[i] == b) {
+      result = "값이 일치합니다";
+      break;
+    } else if (name[i] == a && num[i] != b) {
+      result = "값이 일치하지 않습니다";
+      break;
+    } else if (name[i] != a && num[i] != b) {
+      result = "바사삭치킨";
+    }
+  }
+  return result;
+}
+
+answer("야채곱창", 10);
+
+// 드디어 끝,, 이해는 됐는데 혼자서 할 수 있을까ㅠㅡㅜ 노력하자

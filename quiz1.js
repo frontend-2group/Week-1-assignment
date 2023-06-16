@@ -58,4 +58,29 @@ function maxValue(a) {
 
 const c = maxValue([2, 5, 1, 3, 4]);
 
+console.clear();
+
 //배열에 관한 예습을 좀 더 해야겠다.
+// 위에 맨 처음에 대경님이 알려주신 코드로 하면 어떤 수를 사용하든 5,4,3,2,1 나온다고해서 다른 방법을 생각해보았다
+// 지호님의 코드로 공부를 했다.
+
+//sort 함수를 이용하면 내림차순으로 값을 불러올 수 있겠다 !
+//
+
+function maxvalue(arr) {
+  arr.sort(function (a, b) {
+    return b - a; // a - b면 오름차순
+  });
+
+  let result = {
+    maxvalue: arr[0],
+    sortArr: arr,
+  };
+  return result;
+}
+
+const a = maxvalue([1, 2, 3, 4, 5]);
+console.log(a);
+
+// 리턴이 이해할 듯 말 듯 자꾸 헷갈리는데 1번문제 드디어 이해 완료 ㅠㅠㅜ!
+// 지호님, 대경님, 수현님 감사합니다....
