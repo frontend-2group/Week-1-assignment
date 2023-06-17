@@ -237,3 +237,6 @@ function car(distance){
 
 const res = car(40)
 console.log(res)
+
+//문제를 제대로 이해했는지 모르겠다.
+//생각보다 코드가 짧다.
