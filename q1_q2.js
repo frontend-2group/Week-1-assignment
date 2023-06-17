@@ -1,46 +1,45 @@
 // 6/14 문제 1번 - 미완성
 // 6/15 문제 1번 - 해결!!
-/*
-해결 전 발생한 문제
--> maxValue함수를 실행 했을 때 console.log(a)를 했을때 undefined을 반환했음.
+// 6/17 문제 1번 - sort메서드를 사용하면 간단하지만 없이 도전 해보기
 
-문제 원인
--> return 값으로 console.log(b)를 주어서 함수 실행 과정에서 값을 먼저 반환 해버림.
-
-문제 해결 방안
--> return 값으로 console.log(b)가 아닌 그냥 b를 주어서 값이
-먼저 반환되는걸 막음.
-따라서 const a = maxValue([2, 5, 1, 3, 4]);로 함수를 전달 받을 때 
-const a 객체의 값으로 함수 내부에서 선언한 객체 b를 전달하게 됨.
-*/
-function maxValue(a) {
-  let sortArr = [];
-  for (i = 0; i <= a.length; i++) {
-    if (a[i] > a[i + 1]) {
-      sortArr.unshift(i);
-    } else if (a[i] > a[i + 2]) {
-      sortArr.unshift(i);
-    } else if (a[i] > a[i + 3]) {
-      sortArr.unshift(i);
-    } else if (a[i] > a[i + 4]) {
-      sortArr.unshift(i);
-    } else {
-      sortArr.unshift(i);
+function maxValue(arr) {
+  const sortArr = [];
+  let bigNum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (bigNum < arr[i]) {
+      bigNum = arr[i];
     }
   }
-  sortArr.pop();
 
-  let bigNum = sortArr[0];
-
-  let b = {
+  const ob = {
     maxValue: bigNum,
-    sortArr: sortArr.slice(0),
   };
-
-  return b;
+  return ob;
 }
-const a = maxValue([2, 5, 1, 3, 4]);
+
+const a = maxValue([2, 5, 1, 3, 4, 6, 9, 7, 8]);
 console.log(a);
+//
+
+let q = [];
+let arr = [1, 5, 3, 9, 2];
+let bigNum = 0;
+
+for (j = 0; j < arr.length + 1; j++) {
+  arr.forEach(function (element) {
+    if (element !== bigNum) {
+      q.push(element);
+    }
+  });
+
+  for (i = 0; i < arr.length; i++) {
+    if (bigNum < arr[i]) {
+      bigNum = arr[i];
+    }
+  }
+}
+console.log(bigNum);
+console.log(q);
 
 // 6/14 문제 2번 - 미완성
 // 6/15 문제 2번 - 완성!!
