@@ -96,41 +96,62 @@ function solution(){
 
 // 05. 심화 문제
 console.log('-------------- 05. --------------');
-// 모르겠네요...
 
-function car(ignition){
+function car(){
+    
+    let engine = true;
 
-    if(ignition = true){
-
-        console.log('주행을 시작합니다.');        
+    let ignition = {
+        on(){
+            if (engine === true){
+                engine = false;
+                return '시동이 켜졌습니다.';
+            }
+        },
+        off(){
+            if(engine === false){
+                engine = true;
+                return '시동이 꺼졌습니다.';
+            }
+        },
         
-        function drive(howFar){     
-            let miles = 0;
-    
-            while(miles++ == howFar){
+        drive(howFar){   
+            
+            switch(engine){
+                case true:
+                    console.log("시동을 켜고 다시 시도해주세요.");
+                    break;
+                    
+                case false:
+                    if(howFar < 40){
+                        let miles = 0;
+                        let arrival = howFar;
+                        
+                        while(miles < arrival){
+                            
+                            console.log('남은 주행 거리 : ' + (arrival - miles) +'km');
+                            miles++;
 
-                const countMiles = setInterval(()=> {
-
-                    console.log(`현재 남은 주행 거리: ${howFar - miles}`);
-                
-                    if (miles++ == howFar){
-
-                        clearInterval(countMiles);
-                        console.log('주행이 완료되었습니다.');
-
-                    } else if(miles++ == 40){
-                        clearInterval(countMiles);
-                        console.log('안전 위험으로 시동을 강제 종료했습니다.');
+                            if(miles === arrival){
+                                console.log('주행이 완료되었습니다.');
+                            } 
+                        } 
+                    } else {
+                        engine = true;
+                        console.log('안전 상의 이유로 시동을 강제로 껐습니다.');
                     }
-                
-                }, 500)
-
-            } 
+                    break;
+            }
         }
-        drive(10);
-    
-    }
+    };
+
+    return ignition;
 
 };
 
-car(true);
+const sonata = car();
+console.log(sonata);
+
+console.log(sonata.on());
+console.log(sonata.drive(10));
+console.log(sonata.off());
