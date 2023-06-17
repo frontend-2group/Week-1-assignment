@@ -67,20 +67,71 @@ console.clear();
 //sort 함수를 이용하면 내림차순으로 값을 불러올 수 있겠다 !
 //
 
-function maxvalue(arr) {
-  arr.sort(function (a, b) {
-    return b - a; // a - b면 오름차순
-  });
+// function maxvalue(arr) {
+// arr.sort(function (a, b) {
+// return b - a; // a - b면 오름차순
+// });
 
-  let result = {
-    maxvalue: arr[0],
-    sortArr: arr,
-  };
-  return result;
-}
+// let result = {
+// maxvalue: arr[0],
+// sortArr: arr,
+// };
+// return result;
+// }
 
-const a = maxvalue([1, 2, 3, 4, 5]);
-console.log(a);
+// const b = maxvalue([1, 2, 3, 4, 5]);
+// console.log(b);
+
+// console.clear();
 
 // 리턴이 이해할 듯 말 듯 자꾸 헷갈리는데 1번문제 드디어 이해 완료 ㅠㅠㅜ!
 // 지호님, 대경님, 수현님 감사합니다....
+
+//6월 17일 자바스크립트 day04끝나고 주현님과 강사님과 나머지공부(?) 후 재도전
+
+// 함수의 이름은 maxValue 입니다. 인자로는 정수들이 들어있는 배열을 파라미터로 전달받습니다.
+// 배열로 전달받은 숫자 중 가장 큰 숫자와
+// 숫자를 내림차순으로 정렬된 배열을 객체 형태로 반환해야 합니다.
+//
+// ex)
+//  const a = maxvalue([1,2,3,4,5])
+//  console.log(a)
+//  결과값
+//  {
+//  maxValue: 5,
+//  sortArr = [5,4,3,2,1]
+//  }
+
+// function maxValue(arr) {
+//   arr = maxValue.reverse(); //reverse를 쓸 때는 배열명.reverse 이기 때문에 arr(배열명).reverse(arr)
+
+//   return {
+//     //값이 될 변수(?)를 선언하고 그 변수명으로 리턴 해야하는 듯..?
+//     maxValue: arr[0],
+//     sortArr: [arr],
+//   };
+// }
+
+// maxvalue([1, 2, 3, 4, 5]); // 대문자 틀림
+// const d = maxvalue();
+// console.log(d);
+
+// console.clear();
+//-------------맨처음에 썼던 코드--------
+
+//-------수정 후 -------//
+
+function maxValue(arr) {
+  arr.reverse(arr);
+
+  let result = {
+    maxValue: arr[0],
+    sortArr: arr,
+  };
+
+  return result;
+}
+
+const a = maxValue([1, 2, 3, 4, 5]);
+console.log(a);
+//오늘 수업시간에 배웠던 reserve사용해서 드디어 성공 ㅠㅡㅠ
