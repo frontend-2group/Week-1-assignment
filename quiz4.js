@@ -26,3 +26,5 @@ function solution(arr) {
 const arr = [1, 2, 3, 4, 5];
 const a = solution(arr);
 console.log(a);
+
+// [2,3]
