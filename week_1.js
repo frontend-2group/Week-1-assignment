@@ -222,7 +222,7 @@ car는 각각 시동걸기, 시동끄기, 주행 기능을 가지고 있습니�
 8. 시동이 꺼져있는 상태에서 시동을 다시 끌 수 없습니다.
 */
 
-function car(distance){
+/*function car(distance){
     console.log("시동이 걸렸습니다")
 
     for(let i = 1; i <= distance; i++){
@@ -236,8 +236,55 @@ function car(distance){
 }
 
 const res = car(40)
-console.log(res)
+console.log(res)*/
 
+class car {
+    constructor(distance) {
+        this.distance = distance
+        this.engine = false
+    }
 
-//문제를 제대로 이해했는지 모르겠다.
-//생각보다 코드가 짧다.
+    engineOn() {
+        if(this.engine == true){
+            return "이미 시동이 켜졌습니다"
+        }else{
+            this.engine = true
+            return "시동이 켜졌습니다"
+        }
+    }
+
+    engineOff() {
+        if(this.engine == false){
+            return "이미 시동이 꺼졌습니다"
+        }else{
+            this.engine = false
+            return "시동이 꺼졌습니다"
+        }
+    }
+
+    drive() {
+        if(this.engine == true){
+            for(let i = 1; i <= this.distance; i++){
+                if(i > 39){
+                    this.engine = false
+                    return "안전 사고 위험이 있어 강제로 시동을 종료합니다"
+                }
+                console.log("현재 주행한 거리 : " + i + "km")
+            }
+            return "주행이 완료되었습니다"
+        }else{
+            return "먼저 시동을 켜주세요"
+        }
+    }
+}
+
+    const myCar = new car(40)
+
+    //console.log(myCar.engineOn())
+    console.log(myCar.engineOn())
+    console.log(myCar.drive())
+    console.log(myCar.engineOff())
+    //console.log(myCar.engineOff())
+
+    // 문제를 잘못 이해한 것 같아 다시 품
+
