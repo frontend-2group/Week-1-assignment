@@ -3,43 +3,25 @@
 // 6/17 문제 1번 - sort메서드를 사용하면 간단하지만 없이 도전 해보기
 
 function maxValue(arr) {
-  const sortArr = [];
-  let bigNum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (bigNum < arr[i]) {
-      bigNum = arr[i];
-    }
-  }
+  arr.sort((a, b) => b - a);
 
-  const ob = {
-    maxValue: bigNum,
+  const sortOb = {
+    maxValue: arr[0],
+    sortArr: arr,
   };
-  return ob;
+
+  return sortOb;
 }
 
 const a = maxValue([2, 5, 1, 3, 4, 6, 9, 7, 8]);
 console.log(a);
-//
+/*
+인수로는 배열 받음
 
-let q = [];
-let arr = [1, 5, 3, 9, 2];
-let bigNum = 0;
-
-for (j = 0; j < arr.length + 1; j++) {
-  arr.forEach(function (element) {
-    if (element !== bigNum) {
-      q.push(element);
-    }
-  });
-
-  for (i = 0; i < arr.length; i++) {
-    if (bigNum < arr[i]) {
-      bigNum = arr[i];
-    }
-  }
-}
-console.log(bigNum);
-console.log(q);
+리턴으론
+배열 안의 가장 큰 요소와
+내림차순으로 정렬된 배열 반환
+*/
 
 // 6/14 문제 2번 - 미완성
 // 6/15 문제 2번 - 완성!!
