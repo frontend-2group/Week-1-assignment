@@ -24,3 +24,16 @@ console.log (a)
 // console.log(name === "juhyeon" ? "yes" : "no");
 
 //이게뭔데엥..
+
+// 6/18
+function map(arr, callback) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    result.push(callback(arr[i], i, arr));
+  }
+  return result;
+}
+
+const arr = [1, 2, 3, 4, 5];
+const result = map(arr, 11);
+console.log(result);
