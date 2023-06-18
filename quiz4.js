@@ -19,15 +19,10 @@ function solution(arr) {
     } else {
       b++;
     }
-    return [a, b];
   }
+  return [a, b];
 }
 
 const arr = [1, 2, 3, 4, 5];
 const a = solution(arr);
 console.log(a);
-
-// const a = solution(arr);
-// console.log(a);
-
-//?ㅠㅠ 함수 출력도 어렵네요..
