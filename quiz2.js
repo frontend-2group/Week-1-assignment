@@ -144,5 +144,3 @@ function 재고(a, b) {
 }
 
 console.log(재고("바나나우유", 10));
-
-//undefinde가 나오네요..? 내일 다시 도전..
