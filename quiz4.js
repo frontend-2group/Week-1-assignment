@@ -13,15 +13,14 @@
 function solution(arr) {
   let a = 0,
     b = 0;
-  for (let i = 0; i < arr.length; i++) {
+  for (i = 0; i < arr.length; i++) {
     if (arr[i] % 2 == 0) {
       a++;
     } else {
       b++;
     }
+    return [a, b];
   }
-
-  return [a, b];
 }
 
 const arr = [1, 2, 3, 4, 5];
