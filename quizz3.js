@@ -10,7 +10,7 @@
 // 1. 해당 함수는 배열과 검사하고자 하는 수를 파라미터로 전달 받습니다.
 // 2. 해당 함수는 배열의 각 요소에 10을 더한 후 검사하고자 하는 수가 있는지 검사합니다. (arr[i]+10) -- for문 사용
 // 3. 만약 값이 없다면 결과값이 없습니다를 콘솔에 로그합니다.
-// 4. 값이 있다면 검사하고자하는 수를 제외한 배열을 반환합니다.
+// 4. 값이 있다면 검사하고자하는 수를 제외한 배열을 반환합니다. //splice 사용해봐야겠당
 // 5. 값이 없을 때 console.log에 undefined가 찍혀서는 안됩니다.
 
 // ex)
@@ -20,41 +20,94 @@
 // 결과값
 // [12,13,14,15] ( 값 있음 ) ”결과값이 없습니다“ ( 값 없음 )
 
-// function examine(arr) {
+// 대경님이랑 이 문제에 필요한 부분 같이 적어보았다
+
+/*
+1. 정수랑 배열의 10 더한 값 중에 같은 값이 있다면 그 요소를 제외하고 반환
+2. 정수랑 같은 값이 없다면 "결과값이 없습니다" 출력
+
+<필요한 기능>
+for문으로 10 더하기, splice 사용(?) , 조건문(if or switch)사용
+
+결과값
+[12,13,14,15] ( 값 있음 ) ”결과값이 없습니다“ ( 값 없음 )
+ */
+
+//=========================================================================
+
+// function examine(arr, test) {
 //   //   console.log(arr);
-//   let result = [arr.sort((a, b) => a - b)];
-
-//   for (i = 0; i <= arr.length; i++) {
-//     console.log(arr[i] + 10);
+//   // let result = [arr.sort((a, b) => a - b)];
+//   const plus = [arr];
+//   for (i = 0; i < arr.length; i++) {
+//     plus = arr[i] + 10;
 //   }
-//   if (arr == []) return console.log("결과값이 없습니다");
-
-//   return result;
+//   // if (arr[i] == test) return console.log("dhffkdfa");
+//   return plus;
+//   // return result;
 // }
 
 // const arr = [3, 4, 5, 6, 7];
-// const a = examine(arr, 11);
+// // const a = examine(arr, 11);
+// const a = examine(arr);
+// console.log(a);
+//=========이건 내가 맨~ 처음에 썼던 코드 ===========
+
+//===========대경님이 도와주신 부분..!============
+// let arr = [1, 2, 3, 4, 5];
+
+// function examine(arr,test) {
+//   let result = [];
+
+//   for (i = 0; i < arr.length; i++) {
+//     let data = arr[i] + 10;
+//     result.push(data);
+// }
+// for(i=0; i<arr.length; i++) {
+//   if(result[i] === test ){
+//     result.
+
+//   }
+// }
+// return result;
+
+//     }
+
+// const a = examine(arr,11);
 // console.log(a);
 
-function checkNum(x, y) {
-  let a = [];
+//========== 다시 도전
 
-  for (i = 0; i < x.length; i++) {
-    let value = x[i] + 10;
-    if (value !== y) {
-      a.push(value);
-    }
+function random(arr, test) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    result.push(arr[i] + 10);
   }
-
-  switch (x.length) {
-    case a.length:
-      return y + "값이 없습니다.";
-
-    default:
-      return a;
+  for (let i = 0; i < arr.length; i++) {
+    if (result[i] === test) return "값 있음";
   }
+  return "값이 없음";
 }
 
-const arr = [20, 15, 321, 156, 45, 123, 45, 1, 3, 8, 9];
-const a = checkNum(arr, 19);
+const arr = [1, 2, 3, 4, 5];
+const a = random(arr, 12);
 console.log(a);
+//저기 값 있음에 적당한게 생각이 안나서 filter적용해 보고싶은데 .. 안됨 ,...ㅠㅡㅜ
+
+// function random(arr, test) {
+//   let result = [];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     result.push(arr[i] + 10);
+//   }
+// }
+// const arr = [1, 2, 3, 4, 5];
+// const filterArr = arr.filter((item) => (item) != test);
+// const a = random(arr, 11);
+// console.log(a);
+
+// for (let i = 0; i < arr.length; i++) {
+//   if (result[i] === test) {
+//   result.filter((i) => (item%2) === 0)}
+//   return filter
+// }
