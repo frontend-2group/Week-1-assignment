@@ -28,3 +28,15 @@ const a = solution(arr);
 console.log(a);
 
 // [2,3]
+
+// ==================== filter로 도전 ========================
+
+function solution(arrr) {
+  let c = arr.filter((item) => item % 2 === 0);
+  let d = arr.filter((item) => item % 2 != 0);
+  return [a.length, b.length];
+}
+
+const arrr = [1, 2, 3, 4, 5];
+const e = solution(arr);
+console.log(e);
