@@ -117,30 +117,34 @@ answer("야채곱창", 10);
 
 // for문 안에 if문 사용해서 일치,불일치,품목없음 만들기
 // 키와 키값을 사용하여 만들어 보ㅏ도 될듯.!
+const menu = {
+  야채곱창: 5,
+  바나나우유: 10,
+  삼각김밥: 15,
+  도시락: 10,
+  샌드위치: 10,
+  length: 5,
+};
 
 function 재고(a, b) {
-  const menu = {
-    야채곱창: 5,
-    바나나우유: 10,
-    삼각김밥: 15,
-    도시락: 10,
-    샌드위치: 10,
-  };
-
   const product = Object.keys(menu);
+  const count = Object.values(menu);
+
+  console.log(product);
+  console.log(count);
+
   let answer = "";
 
-  for (i = 0; i <= menu.length; i++) {
-    if (a == product[i] && b == menu[i]) {
-      answer = "전산표화 일치합니다";
+  for (i = 0; i < product.length; i++) {
+    if (product[i] == a && count[i] == b) {
+      answer = "전산표와 일치합니다";
       return answer;
-    } else if (a === product[i] && b != menu[i]) {
+    } else if (product[i] == a && count[i] != b) {
       answer = "전산표와 일치하지 않습니다";
       return answer;
-    } else a != product[i];
-    answer = "바사삭치킨";
-    return answer;
+    }
   }
+  return "품목 없음";
 }
 
-console.log(재고("바나나우유", 10));
+console.log(재고("샌드위치", 11));
