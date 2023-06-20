@@ -76,38 +76,21 @@ for문으로 10 더하기, splice 사용(?) , 조건문(if or switch)사용
 // const a = examine(arr,11);
 // console.log(a);
 
-//========== 다시 도전
+//========== 다시 도전 ===========
 
 function random(arr, test) {
   let result = [];
-  for (let i = 0; i < arr.length; i++) {
+  let testnumber = result.filter((item) => item != test);
+  for (i = 0; i < arr.length; i++) {
     result.push(arr[i] + 10);
   }
-  for (let i = 0; i < arr.length; i++) {
-    if (result[i] === test) return "값 있음";
+  for (i = 0; i < arr.length; i++) {
+    if (result[i] === test) return testnumber;
   }
   return "값이 없음";
 }
 
 const arr = [1, 2, 3, 4, 5];
-const a = random(arr, 12);
-console.log(a);
-//저기 값 있음에 적당한게 생각이 안나서 filter적용해 보고싶은데 .. 안됨 ,...ㅠㅡㅜ
-
-// function random(arr, test) {
-//   let result = [];
-
-//   for (let i = 0; i < arr.length; i++) {
-//     result.push(arr[i] + 10);
-//   }
-// }
-// const arr = [1, 2, 3, 4, 5];
-// const filterArr = arr.filter((item) => (item) != test);
-// const a = random(arr, 11);
+console.log(random(arr, 16));
 // console.log(a);
-
-// for (let i = 0; i < arr.length; i++) {
-//   if (result[i] === test) {
-//   result.filter((i) => (item%2) === 0)}
-//   return filter
-// }
+//성공!!!!
