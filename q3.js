@@ -10,9 +10,10 @@ function plusten(arr, num){
             arr.splice(i,1);
             arr[i] +=10;
         }
+
     }
 
-    if(arr.length==5){
+    if(arr.find(num)==5){
         return "검사하고자 하는 값이 없습니다."
     }else if(arr.length==4){
         return arr
@@ -23,3 +24,4 @@ function plusten(arr, num){
 
 const a = plusten(arr, 12);
 console.log(a);
+
