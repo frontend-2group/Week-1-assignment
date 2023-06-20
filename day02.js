@@ -25,6 +25,38 @@
  ”전산표와 일치하지 않습니다.“ (불일치) 
  ”바사삭치킨“ (품목 없음) 
 */
+/*
+const menu = {
+  야채곱창: 5,
+  바나나우유: 10,
+  삼각김밥: 15,
+  도시락: 10,
+  샌드위치: 10,
+};
+function 재고(a, b) {
+  const product = Object.keys(menu);
+  const count = Object.values(menu);
+
+  console.log(product);
+  console.log(count);
+  // console.log(answer);
+
+  let answer = "";
+
+  for (i = 0; i < product.length; i++) {
+    if (product[i] == a && count[i] == b) {
+      answer = "전산표와 일치합니다";
+      return answer;
+    } else if (product[i] == a && count[i] != b) {
+      answer = "전산표와 일치하지 않습니다";
+      return answer;
+    }
+  }
+  return "품목 없음";
+}
+
+console.log(재고("샌드위치", 11));
+*/
 
 //6/17 다시 문제 풀어보기 => 실패
 //6/18 다시 문제 풀어보기 =>스엉공..이지만 왜???????????????
